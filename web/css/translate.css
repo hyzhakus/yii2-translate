@@ -1,0 +1,9 @@
+.translate-message > div {
+  margin: 5px 0; }
+
+.translate-message span.label {
+  margin-right: 5px; }
+
+.translate-message a {
+  cursor: pointer; }
+
