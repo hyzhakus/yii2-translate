@@ -1,7 +1,10 @@
 {
     "name": "hyzhak/yii2-translate",
     "type": "yii2-extension",
+<<<<<<< HEAD
     "version": "1.2.0",
+=======
+>>>>>>> ea85408507096589452c94139bc6b9df237bf6fa
     "description": "Yii2 multilanguage module",
     "license": "MIT",
     "keywords": [
