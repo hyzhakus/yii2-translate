@@ -1,7 +1,7 @@
 {
     "name": "hyzhak/yii2-translate",
     "type": "yii2-extension",
-    "minimum-stability": "stable",
+    "version": "1.2.0",
     "description": "Yii2 multilanguage module",
     "license": "MIT",
     "keywords": [
@@ -12,8 +12,8 @@
     ],
     "require": {
         "php": ">=5.4.0",
-	"yiisoft/yii2": "~2.0.0",
-	"2amigos/yii2-editable-widget": "~1.0"
+        "yiisoft/yii2": "~2.0.0",
+        "bower-asset/x-editable": "*"
     },
     "autoload": {
         "psr-4": {

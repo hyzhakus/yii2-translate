@@ -16,6 +16,6 @@ class DbTranslate extends \yii\i18n\DbMessageSource {
      */
     public function init() {
         parent::init();
-	}
+    }
 
 }

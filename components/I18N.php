@@ -15,8 +15,9 @@ class I18N extends \yii\i18n\I18N {
 	public $missingTranslationHandler;
 	public $db = 'db';
 	public $sourcePath = [
-		'@app/../web',
-		'@app',
+		'@backend',
+        '@frontend',
+        '@common',
 		'@vendor/hyzhak',
 	];
 	public $format = 'db';
@@ -66,9 +67,12 @@ class I18N extends \yii\i18n\I18N {
 		if (!$this->languagesAll) {
 			if (!isset(Yii::$app->params['languages'])) {
 				throw new InvalidConfigException('You should configure i18n component [languagesAll].');
-			}
+			} else {
+                $this->languagesAll = array_keys(Yii::$app->params['languages']);
+            }
 		}
-		$this->languages = array_diff(array_keys($this->languagesAll), [Yii::$app->sourceLanguage]);
+
+       $this->languages = array_diff($this->languagesAll, [Yii::$app->sourceLanguage]);
 
 		if(!isset($this->categories) || !is_array($this->categories)) {
 			throw new InvalidConfigException('You should configure i18n component [categories].');

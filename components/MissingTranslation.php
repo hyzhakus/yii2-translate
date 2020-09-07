@@ -9,21 +9,21 @@ class MissingTranslation extends \yii\base\Component {
 yii\i18n\MissingTranslationEvent Object
 (
     [message] => Tablets
-    [translatedMessage] => 
+    [translatedMessage] =>
     [category] => main
     [language] => uk
     [name] => missingTranslation
     [sender] => hyzhak\translate\components\DbTranslate Object
 */
     public static function collect(\yii\i18n\MissingTranslationEvent $event) {
-		self::setCollection(['category'=>$event->category, 'message'=>$event->message]);
-	}
+        self::setCollection(['category'=>$event->category, 'message'=>$event->message]);
+    }
 
-	public static function setCollection($params) {
-		self::$_collection[] = $params;
-	}
+    public static function setCollection($params) {
+        self::$_collection[] = $params;
+    }
 
-	public static function getCollection() {
-		return self::$_collection;
-	}
+    public static function getCollection() {
+        return self::$_collection;
+    }
 }
