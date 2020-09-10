@@ -38,15 +38,15 @@ class MessageSource extends ActiveRecord {
 		return $this->hasMany(Message::className(), ['id'=>'id']);
 	}
 
-	public static function getCategories() {
-		$categories = [];
-		foreach(Yii::$app->i18n->categories as $category) {
-			$categories[$category] = \yii\helpers\Inflector::camelize($category);
-		}
-		if (method_exists('\common\models\Catalog', 'getDictionary')) {
-			$categories = $categories + \common\models\Catalog::getDictionary();
-		}
-		return $categories;
-	}
+    public static function getCategories() {
+        $categories = [];
+        foreach(Yii::$app->i18n->categories as $category) {
+            $categories[$category] = \yii\helpers\Inflector::camelize($category);
+        }
+        foreach(self::find()->select('category')->groupBy('category')->column() as $val) {
+            $categories[$val] = \yii\helpers\Inflector::camelize($val);
+        }
+        return $categories;
+    }
 
 }
